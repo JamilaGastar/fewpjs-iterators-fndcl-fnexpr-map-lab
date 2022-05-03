@@ -12,13 +12,26 @@ const tutorials = [
 ];
 
 
+// const titleCased = () => {
+//  return tutorials.map(element => element.toLowerCase().split(' ').map(function (element) {
+//       return (element.charAt(0).toUpperCase() + element.slice(1));
+//      }).join(' '));
+// }
+
+
+// console.log(titleCased());
+
 const titleCased = () => {
- return tutorials.map(element => element.toLowerCase().split(' ').map(function (element) {
-      return (element.charAt(0).toUpperCase() + element.slice(1));
-     }).join(' '));
+  // use the .map method on the tutorials to return a new array
+  function titleCaseString(string) {
+    string = string.split(' ');
+    for (var i=0; i<string.length; i++) {
+      string[i] = string[i].charAt(0).toUpperCase() + string[i].slice(1);
+    }
+    return string.join(' ');
+  }
+  return tutorials.map(titleCaseString);
 }
 
-
 console.log(titleCased());
-
 
